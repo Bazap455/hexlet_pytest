@@ -10,6 +10,7 @@ def reverse(str):
 
     return str[::-1]
 
+
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
