@@ -1,18 +1,17 @@
-name: flake8-test
+name: tests
 
 
 on: [push, pull_request]
 
 
 jobs:
-  flake8-test:
+  main:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@2
       - name: poetry-install
         run: |
           pip install poetry
           poetry install
-      - name: linter-test
-        run: |
-          poetry run flake8 hexlet_pytest
+      - name: check-tests
+        run: poetry run pytest
